@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -16,7 +15,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -29,7 +27,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -38,7 +35,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -48,7 +44,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -65,7 +60,7 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
+    - I am good
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -82,14 +77,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: go_hiking
   examples: |
     - I want to go hiking
@@ -97,29 +90,20 @@ nlu:
     - Where can I go hiking?
     - What are good places to hike?
     - What are some hiking recommendations?
-
 - intent: hiking_locations
   examples: |
     - forests
-    - i like to hike in forests
-    - Coastal
-    - mountains
-    - I like hiking around mountains
-    - grassland
-    - I enjoy grassland hikes
-    - desert
-    - around lakes
-    - near lakes
-    - near rivers
-    - I enjoy hiking along rivers
-    - I like hiking near rivers
-
-- entities:
-  
-
-- slots:
-  slot_name: env_to_hike
-    type: text
-    influence_conversation: true
-    mappings:
-    - type: custom
+    - i like to hike in [forests](location)
+    - [Coastal](location)
+    - [mountains](location)
+    - I like hiking around [mountains](location)
+    - [grassland](location)
+    - I enjoy [grassland](location) hikes
+    - [desert](location)
+    - around [lakes](location)
+    - near [lakes](location)
+    - near [rivers](location)
+    - I enjoy hiking along [rivers](location)
+    - I like hiking near [rivers](location)
+    - I like to hike in [forests](location)
+    - I want to hike near [rivers](location)

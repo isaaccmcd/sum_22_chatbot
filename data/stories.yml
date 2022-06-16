@@ -29,7 +29,32 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: go hike
+# - story: go hike
+#   steps:
+#   - intent: go_hiking
+#   - action: utter_go_hiking
+#   - intent: hiking_locations
+#   - action: utter_hiking_locations
+
+- story: go hike 1
   steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
   - intent: go_hiking
   - action: utter_go_hiking
+  - intent: hiking_locations
+    entities:
+    - location: forests
+  - slot_was_set:
+    - location: forests
+
+- story: go hike 2
+  - action: utter_hiking_locations
+  - intent: hiking_locations
+    entities:
+    - location: rivers
+  - slot_was_set:
+    - location: rivers
+  - action: utter_hiking_locations
